@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyboard Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .product-card {
+            width: 400px;
+            margin: 50px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        .product-card img {
+            width: 350px;
+            height: 200px;
+            object-fit: contain;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="product-card">
+
+        <img src="{{ url_for('static', filename='images/keyboard.jpg') }}"
+             alt="Keyboard">
+
+        <h1>Keyboard</h1>
+
+        <p>Category: Electronics</p>
+        <p>Price: ₹1500</p>
+        <p>Stock: 20</p>
+
+    </div>
+
+</body>
+</html>

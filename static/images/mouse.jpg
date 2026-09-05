@@ -1,0 +1,12 @@
+<div class="product-card">
+
+    <img src="{{ url_for('static', filename='images/mouse.jpg') }}"
+         alt="Mouse"
+         width="350">
+
+    <h1>Mouse</h1>
+    <p>Category: Electronics</p>
+    <p>Price: ₹800</p>
+    <p>Stock: 30</p>
+
+</div>

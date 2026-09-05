@@ -1,0 +1,12 @@
+<div class="product-card">
+
+    <img src="{{ url_for('static', filename='images/laptop.jpg') }}"
+         alt="Laptop"
+         width="350">
+
+    <h1>Laptop</h1>
+    <p>Category: Electronics</p>
+    <p>Price: ₹50000</p>
+    <p>Stock: 10</p>
+
+</div>
