@@ -1,34 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Products</title>
-</head>
-<body>
-
-    <h1>Products</h1>
-
-    <a href="/dashboard">Back to Dashboard</a>
-
-    <h2>Product List</h2>
-
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Quantity</th>
-            <th>Price</th>
-        </tr>
-
-        {% for product in products %}
-        <tr>
-            <td>{{ product[0] }}</td>
-            <td>{{ product[1] }}</td>
-            <td>{{ product[2] }}</td>
-            <td>{{ product[3] }}</td>
-        </tr>
-        {% endfor %}
-
-    </table>
-
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Product details{% endblock %}
+{% block content %}
+<div class="page-heading"><div><p class="eyebrow">Catalog</p><h1>Product details</h1><p class="muted">A focused view of your inventory item.</p></div><a class="button secondary" href="{{ url_for('products') }}">Back to products</a></div>
+<section class="panel"><div class="panel-heading"><h2>Product overview</h2></div><div class="empty">Select a product from the catalog to view its details.</div></section>
+{% endblock %}

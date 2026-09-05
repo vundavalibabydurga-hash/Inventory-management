@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{% block title %}Inventory{% endblock %} | Stockroom</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><div class="app-shell">
+<aside class="sidebar"><a class="brand" href="{{ url_for('dashboard') }}"><span class="brand-mark">S</span><span>Stockroom</span></a><p class="side-label">Workspace</p><nav class="side-nav"><a class="{% if request.endpoint == 'dashboard' %}active{% endif %}" href="{{ url_for('dashboard') }}">Overview</a><a class="{% if request.endpoint in ['products', 'add_product'] %}active{% endif %}" href="{{ url_for('products') }}">Products</a><a class="{% if request.endpoint in ['suppliers', 'add_supplier'] %}active{% endif %}" href="{{ url_for('suppliers') }}">Suppliers</a><a class="{% if request.endpoint == 'sales' %}active{% endif %}" href="{{ url_for('sales') }}">Sales</a></nav><div class="sidebar-footer">Signed in as <strong>{{ session.get('username', 'user') }}</strong><br><a href="{{ url_for('logout') }}">Sign out</a></div></aside>
+<main class="content">{% block content %}{% endblock %}</main>
+</div></body></html>

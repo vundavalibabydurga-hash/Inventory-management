@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Dashboard</title>
-</head>
-<body>
-
-    <h1>Inventory Dashboard</h1>
-
-    <h2>Menu</h2>
-
-    <ul>
-        <li><a href="/products">Products</a></li>
-        <li><a href="/suppliers">Suppliers</a></li>
-        <li><a href="/sales">Sales</a></li>
-        <li><a href="/logout">Logout</a></li>
-    </ul>
-
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Overview{% endblock %}
+{% block content %}
+<div class="page-heading"><div><p class="eyebrow">Inventory control</p><h1>Good morning, {{ session.get('username', 'there') }}.</h1><p class="muted">Here is the pulse of your stockroom today.</p></div><a class="button" href="{{ url_for('add_product') }}">+ Add product</a></div>
+<section class="stats"><article class="stat"><div class="stat-label">Products</div><div class="stat-value">{{ product_count }}</div></article><article class="stat"><div class="stat-label">Units in stock</div><div class="stat-value">{{ total_stock }}</div></article><article class="stat"><div class="stat-label">Suppliers</div><div class="stat-value">{{ supplier_count }}</div></article><article class="stat"><div class="stat-label">Sales recorded</div><div class="stat-value">{{ sales_count }}</div></article></section>
+<section class="panel"><div class="panel-heading"><div><h2>Keep things moving</h2><p class="muted">Jump into the part of your operation that needs attention.</p></div></div><div class="quick-links"><a href="{{ url_for('products') }}">Manage products <span>-></span></a><a href="{{ url_for('suppliers') }}">View suppliers <span>-></span></a><a href="{{ url_for('sales') }}">Review sales <span>-></span></a></div></section>
+{% endblock %}
